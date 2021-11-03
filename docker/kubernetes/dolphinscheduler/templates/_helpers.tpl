@@ -30,7 +30,11 @@ If release name contains chart name it will be used as a full name.
 Create a default docker image fullname.
 */}}
 {{- define "dolphinscheduler.image.fullname" -}}
+  {{- if .Values.global.imageRegistry }}
+{{- .Values.global.imageRegistry }}/{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion -}}
+  {{- else }}
 {{- .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion -}}
+  {{- end -}}
 {{- end -}}
 
 {{/*

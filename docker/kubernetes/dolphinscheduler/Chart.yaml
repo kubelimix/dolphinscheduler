@@ -17,7 +17,7 @@
 
 apiVersion: v2
 name: dolphinscheduler
-description: Dolphin Scheduler is a distributed and easy-to-expand visual DAG workflow scheduling system, dedicated to solving the complex dependencies in data processing, making the scheduling system out of the box for data processing.
+description: 工作流调度系统
 home: https://dolphinscheduler.apache.org
 icon: https://dolphinscheduler.apache.org/img/hlogo_colorful.svg
 keywords:
