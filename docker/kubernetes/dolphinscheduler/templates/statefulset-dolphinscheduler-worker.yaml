@@ -107,6 +107,7 @@ spec:
               name: {{ include "dolphinscheduler.fullname" . }}-worker-logs
             {{- include "dolphinscheduler.sharedStorage.volumeMount" . | nindent 12 }}
             {{- include "dolphinscheduler.fsFileResource.volumeMount" . | nindent 12 }}
+            {{- include "dolphinscheduler.hadoop-conf.volumeMount" . | nindent 12 }}
       volumes:
         - name: {{ include "dolphinscheduler.fullname" . }}-worker-data
           {{- if .Values.worker.persistentVolumeClaim.dataPersistentVolume.enabled }}
@@ -124,6 +125,7 @@ spec:
           {{- end }}
         {{- include "dolphinscheduler.sharedStorage.volume" . | nindent 8 }}
         {{- include "dolphinscheduler.fsFileResource.volume" . | nindent 8 }}
+        {{- include "dolphinscheduler.hadoop-conf.volume" . | nindent 8 }}
   {{- if .Values.worker.persistentVolumeClaim.enabled }}
   volumeClaimTemplates:
     {{- if .Values.worker.persistentVolumeClaim.dataPersistentVolume.enabled }}

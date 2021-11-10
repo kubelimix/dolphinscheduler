@@ -1,0 +1,142 @@
+{
+    "title": "",
+    "type": "object",
+    "properties": {
+        "externalDatabase": {
+            "title": "外部数据库",
+            "type": "object",
+            "properties": {
+                "database": {
+                    "type": "string",
+                    "title": "数据库实例",
+                    "form": true
+                },
+                "driver": {
+                    "type": "string",
+                    "title": "数据库驱动",
+                    "form": true
+                },
+                "host": {
+                    "type": "string",
+                    "title": "数据库主机",
+                    "form": true
+                },
+                "params": {
+                    "type": "string",
+                    "title": "连接参数",
+                    "form": true
+                },
+                "password": {
+                    "type": "string",
+                    "title": "密码",
+                    "form": true
+                },
+                "port": {
+                    "type": "string",
+                    "title": "端口",
+                    "form": true
+                },
+                "type": {
+                    "type": "string",
+                    "title": "数据库类型",
+                    "form": true
+                },
+                "username": {
+                    "type": "string",
+                    "title": "用户名",
+                    "form": true
+                }
+            }
+        },
+        "externalZookeeper": {
+            "title": "外部ZooKeeper",
+            "type": "object",
+            "properties": {
+                "zookeeperQuorum": {
+                    "type": "string",
+                    "title": "zookeeperQuorum",
+                    "form": true
+                },
+                "zookeeperRoot": {
+                    "type": "string",
+                    "title": "zookeeperRoot",
+                    "form": true
+                }
+            }
+        },
+        "global": {
+            "title": "全局配置",
+            "type": "object",
+            "properties": {
+                "imageRegistry": {
+                    "type": "string",
+                    "title": "镜像仓库地址",
+                    "form": true
+                }
+            }
+        },
+        "image": {
+            "title": "镜像地址",
+            "type": "object",
+            "properties": {
+                "pullPolicy": {
+                    "type": "string",
+                    "title": "拉取策略",
+                    "form": true
+                },
+                "pullSecret": {
+                    "type": "string",
+                    "title": "拉取秘钥",
+                    "form": true
+                },
+                "repository": {
+                    "type": "string",
+                    "title": "镜像仓库",
+                    "form": true
+                },
+                "tag": {
+                    "type": "string",
+                    "title": "镜像Tag",
+                    "form": true
+                }
+            }
+        },
+        "zookeeper": {
+            "title": "内置ZooKeeper",
+            "type": "object",
+            "properties": {
+                "enabled": {
+                    "type": "boolean",
+                    "title": "是否启用",
+                    "form": true
+                },
+                "fourlwCommandsWhitelist": {
+                    "type": "string",
+                    "title": "fourlwCommandsWhitelist",
+                    "form": false
+                },
+                "persistence": {
+                    "title": "持久化",
+                    "type": "object",
+                    "properties": {
+                        "enabled": {
+                            "type": "boolean",
+                            "title": "是否开启",
+                            "form": true
+                        },
+                        "size": {
+                            "type": "string",
+                            "title": "大小",
+                            "form": true
+                        }
+                    }
+                },
+                "zookeeperRoot": {
+                    "type": "string",
+                    "title": "zookeeperRoot",
+                    "form": true
+                }
+            }
+        }
+    }
+}

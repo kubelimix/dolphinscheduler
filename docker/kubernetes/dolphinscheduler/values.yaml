@@ -18,11 +18,13 @@
 # Default values for dolphinscheduler-chart.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
-
 timezone: "Asia/Shanghai"
 
 global:
   imageRegistry: "docker.mirrors.iflytek.com:5000"
+
+dm-database:
+  enabled: false
 
 image:
   repository: "apache/dolphinscheduler"
@@ -96,7 +98,7 @@ common:
     SW_GRPC_LOG_SERVER_PORT: "11800"
     # dolphinscheduler env
     HADOOP_HOME: "/opt/soft/hadoop"
-    HADOOP_CONF_DIR: "/opt/soft/hadoop/etc/hadoop"
+    HADOOP_CONF_DIR: "/etc/hadoop/conf"
     SPARK_HOME1: "/opt/soft/spark1"
     SPARK_HOME2: "/opt/soft/spark2"
     PYTHON_HOME: "/usr/bin/python"

@@ -238,3 +238,21 @@ Create a fsFileResourcePersistence volumeMount.
   name: {{ include "dolphinscheduler.fullname" . }}-fs-file
 {{- end -}}
 {{- end -}}
+
+{{/*
+Create a hadoop volume.
+*/}}
+{{- define "dolphinscheduler.hadoop-conf.volume" -}}
+- name: {{ include "dolphinscheduler.fullname" . }}-hadoop-conf
+  configMap:
+    name: {{ include "dolphinscheduler.fullname" . }}-hadoop-conf
+    defaultMode: 420
+{{- end -}}
+
+{{/*
+Create a hadoop volumeMount.
+*/}}
+{{- define "dolphinscheduler.hadoop-conf.volumeMount" -}}
+- mountPath: {{ default "/etc/hadoop/conf" .Values.common.configmap.HADOOP_CONF_DIR | quote }}
+  name: {{ include "dolphinscheduler.fullname" . }}-hadoop-conf
+{{- end -}}

@@ -1,0 +1,34 @@
+global:
+  imageRegistry: "docker.mirrors.iflytek.com:5000"
+
+image:
+  repository: "apache/dolphinscheduler"
+  tag: "1.3.8"
+  pullPolicy: "IfNotPresent"
+  pullSecret: ""
+
+# 是否直接使用内置mysql
+dm-database:
+  enabled: false
+
+externalDatabase:
+  type: "mysql"
+  driver: "com.mysql.jdbc.Driver"
+  host: "mysql"
+  port: "3306"
+  username: "admin"
+  password: "admin"
+  database: "dolphinscheduler"
+  params: "characterEncoding=utf8"
+
+zookeeper:
+  enabled: true
+  fourlwCommandsWhitelist: "srvr,ruok,wchs,cons"
+  persistence:
+    enabled: true
+    size: "10Gi"
+  zookeeperRoot: "/dolphinscheduler"
+
+externalZookeeper:
+  zookeeperQuorum: "127.0.0.1:2181"
+  zookeeperRoot: "/dolphinscheduler"
