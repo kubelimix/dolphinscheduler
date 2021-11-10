@@ -128,7 +128,7 @@ Create a database environment variables.
   {{- if .Values.postgresql.enabled }}
   value: {{ template "dolphinscheduler.postgresql.fullname" . }}
   {{- else }}
-  value: {{ .Values.externalDatabase.host | quote }}
+  value: {{ tpl .Values.externalDatabase.host . | quote }}
   {{- end }}
 - name: DATABASE_PORT
   {{- if .Values.postgresql.enabled }}

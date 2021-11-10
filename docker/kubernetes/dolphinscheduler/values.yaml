@@ -24,7 +24,7 @@ global:
   imageRegistry: "docker.mirrors.iflytek.com:5000"
 
 dm-database:
-  enabled: false
+  enabled: true
 
 image:
   repository: "apache/dolphinscheduler"
@@ -48,11 +48,11 @@ postgresql:
 externalDatabase:
   type: "mysql"
   driver: "com.mysql.jdbc.Driver"
-  host: "mysql"
+  host: "{{ .Release.Name }}-dm-mysql"
   port: "3306"
   username: "admin"
   password: "admin"
-  database: "dolphinscheduler"
+  database: "dolphin"
   params: "characterEncoding=utf8"
 
 ## If not exists external zookeeper, by default, Dolphinscheduler's zookeeper will use it.
