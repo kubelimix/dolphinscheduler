@@ -24,7 +24,7 @@ global:
   imageRegistry: "docker.mirrors.iflytek.com:5000"
 
 dm-database:
-  enabled: true
+  enabled: false
 
 image:
   repository: "apache/dolphinscheduler"
